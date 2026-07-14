@@ -1,0 +1,213 @@
+/* ==========================================================================
+   HEADER STYLES
+   ========================================================================== */
+.site-header {
+    background-color: var(--brand-navy);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-logo img {
+    height: 55px; /* Adjust based on your exported Figma asset */
+    width: auto;
+    display: block;
+}
+
+/* Dynamic Primary Navigation */
+.primary-navigation ul.nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 35px;
+}
+
+.primary-navigation ul.nav-list li a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.primary-navigation ul.nav-list li a:hover {
+    color: var(--brand-yellow);
+}
+
+/* ==========================================================================
+   FOOTER STYLES
+   ========================================================================== */
+.site-footer {
+    background-color: var(--brand-navy-dark);
+    color: var(--white);
+    padding-top: 60px;
+}
+
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle divider */
+}
+
+.footer-brand img {
+    height: 60px;
+    margin-bottom: 25px;
+    display: block;
+}
+
+.footer-brand p {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: #B0BEC5; /* Muted text for address */
+    margin-bottom: 5px;
+}
+
+.footer-brand a.text-yellow {
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.footer-social h4 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: var(--white);
+    text-align: right;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--brand-yellow);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: opacity 0.3s ease;
+}
+
+.social-icons a:hover {
+    opacity: 0.7;
+}
+
+/* Footer Bottom (Dynamic Links & Plugin Shortcode) */
+.footer-bottom {
+    background-color: var(--brand-navy);
+    padding: 20px 0;
+}
+
+.bottom-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bottom-flex ul.footer-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 25px;
+}
+
+.bottom-flex ul.footer-links li a {
+    color: #B0BEC5;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.3s ease;
+}
+
+.bottom-flex ul.footer-links li a:hover {
+    color: var(--white);
+}
+
+.copyright {
+    font-size: 0.85rem;
+    color: #B0BEC5;
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES (Tablet & Mobile)
+   ========================================================================== */
+@media (max-width: 992px) {
+    /* Header Wrap */
+    .header-inner {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    /* Force Navigation to bottom row on tablet */
+    .primary-navigation {
+        order: 3;
+        width: 100%;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        padding-top: 15px;
+    }
+    
+    .primary-navigation ul.nav-list {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    /* Footer Stack */
+    .footer-grid {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .footer-social h4 {
+        text-align: center;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+    
+    .bottom-flex {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .bottom-flex ul.footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Mobile specific adjustments */
+    .site-logo img {
+        height: 45px;
+    }
+    
+    .primary-navigation ul.nav-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .header-cta {
+        display: none; /* Hide top CTA on small mobile to save space, usually standard practice unless a hamburger menu is built */
+    }
+}
